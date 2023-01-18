@@ -10,6 +10,7 @@ if ('serviceWorker' in navigator) {
 }
 let deferredPrompt;
 const installApp = document.getElementById('installApp');
+installApp.style.display = 'none';
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
