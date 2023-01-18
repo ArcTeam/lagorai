@@ -1,0 +1,47 @@
+{
+  "short_name": "Parco Miniere Lagorai",
+  "name": "Parco Miniere Lagorai",
+  "icons": [
+    {
+      "src": "img/icons/app-icon-48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "img/icons/app-icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/icons/app-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/icons/app-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/app-icon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "img/icons/app-icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "img/icons/app-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e0a718",
+  "description": "Le pietre sono scrigni preziosi, custodiscono segreti e memorie. Possono restare in silenzio per secoli ma poi, all’improvviso, per magia, cominciano a raccontare. Dal ventre della terra sono emerse storie di uomini e donne che hanno scavato le sue viscere in lotta per il pane quotidiano. Minatori e metallurghi, alchimisti, venuti spesso da molto lontano che hanno portato in superficie minerali e cristalli. E poi hanno smesso perché c’è un tempo per tutto. Dalla loro fatiche e dalle loro ricerche nel sottosuolo è nato il Geoparco."
+}
