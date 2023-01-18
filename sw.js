@@ -1,5 +1,5 @@
 const cacheName = "v1";
-let files=[
+let cacheFile=[
 '/',
 './audio',
 './audio/37EtaContemporanea.mp3',

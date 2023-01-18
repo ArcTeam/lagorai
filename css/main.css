@@ -29,18 +29,10 @@ header h3{line-height: 50px;visibility: hidden;}
 }
 .opened{right:0;}
 .animation{-webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease;}
-nav{
-  position:fixed;
-  top:60px;
-  right:-310px;
-  bottom:0;
-  width:300px;
-  background-color: #e0a718;
-  overflow:auto;
-  z-index:2000;
-}
-nav .list-group-item{background-color: #e0a718;}
-nav .list-group-item.active{background-color: #fff; color:#8c680d;border-color: #8c680d;}
+nav{position:fixed;top:60px; right:-310px; bottom:0; width:300px; background-color: #e0a718;  overflow:auto;  z-index:2000;}
+nav #menu{position: relative;height: 95%;overflow: auto;}
+nav #menu .list-group-item{background-color: #e0a718;}
+nav #menu .list-group-item.active{background-color: #fff; color:#8c680d;border-color: #8c680d;}
 nav .submenu{background-color: #8c680d; color:#fff;padding-left: 30px;font-size: .9rem;}
 
 main{
