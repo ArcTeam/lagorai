@@ -111,7 +111,12 @@ self.addEventListener('install', e => {
 
 function precache() {
   return caches.open(cacheName).then(function (cache) {
-    return cache.addAll(cacheFile);
+    const stack = [];
+    cacheFile.forEach(file => stack.push(
+        cache.add(file).catch(_=>console.error(`can't load ${file} to cache`))
+    ));
+    return Promise.all(stack);
+    // return cache.addAll(cacheFile);
   });
 }
 
