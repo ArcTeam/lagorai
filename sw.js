@@ -1,4 +1,4 @@
-const cacheName = "v3.1";
+const cacheName = "v3.2";
 let cacheFile=[
 './lagorai',
 './lagorai/audio/37EtaContemporanea.mp3',
