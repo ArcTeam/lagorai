@@ -104,56 +104,56 @@ let cacheFile=[
 '/lagorai/js/function.js',
 '/lagorai/js/init.js'
 ]
-self.addEventListener('install', e => {
-  console.log('The service worker is being installed.');
-  e.waitUntil(precache())
-});
-
-function precache() {
-  return caches.open(cacheName).then(function (cache) {
-    const stack = [];
-    cacheFile.forEach(file => stack.push(
-        cache.add(file).catch(_=>console.error(`can't load ${file} to cache`))
-    ));
-    return Promise.all(stack);
-    // return cache.addAll(cacheFile);
-  });
-}
-
-self.addEventListener('fetch', event => {
-  console.log('The service worker is serving the asset.');
-  event.respondWith(
-    fromCache(event.request)
-  );
-  event.waitUntil(update(event.request));
-});
-function fromCache(request) {
-  return caches.open(cacheName).then(function (cache) {
-    return cache.match(request).then(function (matching) {
-      return matching || Promise.reject('no-match');
-    });
-  });
-}
-function update(request) {
-  return caches.open(cacheName).then(function (cache) {
-    return fetch(request).then(function (response) {
-      return cache.put(request, response);
-    });
-  });
-}
-
-self.addEventListener('activate', event => {
-  console.log('Activating new service worker...');
-  const cacheWhitelist = [cacheName];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(oldCache => {
-          if (cacheWhitelist.indexOf(oldCache) === -1) {
-            return caches.delete(oldCache);
-          }
-        })
-      );
-    })
-  );
-});
+// self.addEventListener('install', e => {
+//   console.log('The service worker is being installed.');
+//   e.waitUntil(precache())
+// });
+//
+// function precache() {
+//   return caches.open(cacheName).then(function (cache) {
+//     const stack = [];
+//     cacheFile.forEach(file => stack.push(
+//         cache.add(file).catch(_=>console.error(`can't load ${file} to cache`))
+//     ));
+//     return Promise.all(stack);
+//     // return cache.addAll(cacheFile);
+//   });
+// }
+//
+// self.addEventListener('fetch', event => {
+//   console.log('The service worker is serving the asset.');
+//   event.respondWith(
+//     fromCache(event.request)
+//   );
+//   event.waitUntil(update(event.request));
+// });
+// function fromCache(request) {
+//   return caches.open(cacheName).then(function (cache) {
+//     return cache.match(request).then(function (matching) {
+//       return matching || Promise.reject('no-match');
+//     });
+//   });
+// }
+// function update(request) {
+//   return caches.open(cacheName).then(function (cache) {
+//     return fetch(request).then(function (response) {
+//       return cache.put(request, response);
+//     });
+//   });
+// }
+//
+// self.addEventListener('activate', event => {
+//   console.log('Activating new service worker...');
+//   const cacheWhitelist = [cacheName];
+//   event.waitUntil(
+//     caches.keys().then(cacheNames => {
+//       return Promise.all(
+//         cacheNames.map(oldCache => {
+//           if (cacheWhitelist.indexOf(oldCache) === -1) {
+//             return caches.delete(oldCache);
+//           }
+//         })
+//       );
+//     })
+//   );
+// });

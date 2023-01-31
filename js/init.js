@@ -1,41 +1,41 @@
 /////// SERVICE WORKER //////////
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful: ', registration);
-      })
-      .catch(err => console.error('ServiceWorker registration failed', err));
-  });
-}
-let deferredPrompt;
-const installApp = document.getElementById('installApp');
-installApp.style.display = 'none';
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installApp.style.display = 'block';
-});
-installApp.addEventListener('click', async () => {
-  installApp.style.display = 'none';
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice
-  .then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
-      console.log('User accepted the A2HS prompt');
-    } else {
-      console.log('User dismissed the A2HS prompt');
-    }
-    deferredPrompt = null;
-  });
-  // if (deferredPrompt !== null) {
-  //   deferredPrompt.prompt();
-  //   const { outcome } = await deferredPrompt.userChoice;
-  //   if (outcome === 'accepted') {
-  //     deferredPrompt = null;
-  //   }
-  // }
-});
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', function() {
+//     navigator.serviceWorker.register('sw.js')
+//       .then(registration => {
+//         console.log('ServiceWorker registration successful: ', registration);
+//       })
+//       .catch(err => console.error('ServiceWorker registration failed', err));
+//   });
+// }
+// let deferredPrompt;
+// const installApp = document.getElementById('installApp');
+// installApp.style.display = 'none';
+// window.addEventListener('beforeinstallprompt', (e) => {
+//   e.preventDefault();
+//   deferredPrompt = e;
+//   installApp.style.display = 'block';
+// });
+// installApp.addEventListener('click', async () => {
+//   installApp.style.display = 'none';
+//   deferredPrompt.prompt();
+//   deferredPrompt.userChoice
+//   .then((choiceResult) => {
+//     if (choiceResult.outcome === 'accepted') {
+//       console.log('User accepted the A2HS prompt');
+//     } else {
+//       console.log('User dismissed the A2HS prompt');
+//     }
+//     deferredPrompt = null;
+//   });
+//   // if (deferredPrompt !== null) {
+//   //   deferredPrompt.prompt();
+//   //   const { outcome } = await deferredPrompt.userChoice;
+//   //   if (outcome === 'accepted') {
+//   //     deferredPrompt = null;
+//   //   }
+//   // }
+// });
 /////////// MAPPE ///////////////
 let map;
 const osmTile = 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png';
